@@ -1,4 +1,4 @@
-#
+e#
 # Author::  Christoph Kappel <unexist@dorfelite.net>
 # Version:: $Id$
 # License:: GNU GPLv2
@@ -347,8 +347,8 @@ grab "W-3", :ViewSwitch3
 grab "W-4", :ViewSwitch4
 
 # Select next and prev view */
-grab "KP_Add",      :ViewNext
-grab "KP_Subtract", :ViewPrev
+grab "W-S-Right",      :ViewNext
+grab "W-S-Left", :ViewPrev
 
 # Move mouse to screen1, screen2, ...
 grab "W-A-1", :ScreenJump1
@@ -425,6 +425,8 @@ grab "W-KP_3", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Exec programs
 grab "W-Return", "urxvt"
+grab "W-c", "chromium"
+grab "W-p", "pcmanfm"
 
 # Run Ruby lambdas
 grab "S-F2" do |c|
@@ -556,8 +558,8 @@ end
 
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt"
-tag "browser", "uzbl|opera|firefox|navigator"
-
+tag "browser", "uzbl|opera|firefox|navigator|chromium"
+tag "files", "pcmanfm"
 # Placement
 tag "editor" do
   match  "[g]?vim"
@@ -667,10 +669,25 @@ end
 # http://subforge.org/projects/subtle/wiki/Tagging
 #
 
-view "terms", "terms|default"
-view "www",   "browser"
-view "gimp",  "gimp_.*"
-view "dev",   "editor"
+view "term" do
+	match "terms|default"
+	icon "/home/edwin/.local/share/subtle/icons/terminal.xbm"
+end
+
+view "www" do
+	match "browser"
+	icon "/home/edwin/.local/share/subtle/icons/world.xbm"
+end
+
+view "files" do
+	match "files"
+	icon "/home/edwin/.local/share/subtle/icons/shelf.xbm"
+end
+
+view "dev" do
+	match "editor"
+	icon "/home/edwin/.local/share/subtle/icons/pencil.xbm"
+end
 
 #
 # == Sublets
