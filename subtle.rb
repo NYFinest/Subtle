@@ -43,7 +43,7 @@ set :font, "xft:dina-14"
 #set :font, "xft:sans-8"
 
 # Separator between sublets
-set :separator, "]["
+set :separator, "*"
 
 # Set the WM_NAME of subtle (Java quirk)
 # set :wmname, "LG3D"
@@ -94,8 +94,9 @@ set :separator, "]["
 #
 
 screen 1 do
-  top    [ :views, :title, :spacer, :keychain, :spacer, :separator, :cpu, :separator, :memory, :separator, :temp, :separator, :battery, :separator, :uptime, :separator, :clock, :separator, :tray ]
-  bottom [ ]
+ # top    [ :views, :title, :spacer, :keychain, :spacer, :separator, :cpu, :separator, :memory, :separator, :temp, :separator, :battery, :separator, :uptime, :separator, :clock, :separator, :tray ]
+   top    [ :title, :spacer, ]	  
+   bottom [ :views, :spacer, :tray]
 end
 
 # Example for a second screen:
@@ -151,7 +152,7 @@ end
 # Style for view buttons
 style :views do
   padding     0, 3
-  border      "#303030", 0
+  border      "#FFFFF", 0
   foreground  "#808080"
   background  "#000000"
 end
