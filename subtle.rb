@@ -558,9 +558,9 @@ end
 #
 
 # Simple tags
-tag "terms",   "xterm|[u]?rxvt"
+tag "main",   "xterm|[u]?rxvt"
 tag "browser", "uzbl|opera|firefox|navigator|chromium"
-tag "files", "pcmanfm"
+tag "files", "pcmanfm|epdfview"
 # Placement
 tag "editor" do
   match  "[g]?vim"
@@ -670,8 +670,8 @@ end
 # http://subforge.org/projects/subtle/wiki/Tagging
 #
 
-view "term" do
-	match "terms|default"
+view "main" do
+	match "main|default"
 	icon "/home/edwin/.local/share/subtle/icons/terminal.xbm"
 end
 
@@ -685,7 +685,7 @@ view "files" do
 	icon "/home/edwin/.local/share/subtle/icons/shelf.xbm"
 end
 
-view "dev" do
+view "work" do
 	match "editor"
 	icon "/home/edwin/.local/share/subtle/icons/pencil.xbm"
 end
